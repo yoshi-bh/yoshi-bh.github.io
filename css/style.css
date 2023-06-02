@@ -1,0 +1,24 @@
+/*** General ***/
+* {
+	font-family: "Roboto", sans-serif;
+}
+
+:root {
+	--main-color: #9356DC;
+  --grad-color: #FF79DA;
+  --sprt-color: #99E2D0;
+  --sprt-txt-color: #008766;
+}
+
+.fa-solid {
+  color: var(--main-color);
+}
+
+.title {
+  font-family: "Shrikhand", cursive;
+}
+
+/*** Header ***/
+header {
+	height: 63px;
+}
