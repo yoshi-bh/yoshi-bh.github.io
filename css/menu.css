@@ -1,0 +1,39 @@
+.img-container {
+  /* z-index: 100; */
+  /* width: 100%; */
+  height: 275px;
+}
+
+/*** Menu ***/
+
+.menu {
+  position: relative;
+  z-index: 1;
+  margin-top: -50px;
+  padding: 14px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  border-radius: 32px 32px 0 0;
+  background-color: #F7F7F7;
+}
+
+.menu .title-container {
+  margin: 18px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu .title {
+  margin: 0;
+}
+
+.course {
+  margin: 30px 0;
+}
+
+.course h3 {
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--sprt-color);
+}
