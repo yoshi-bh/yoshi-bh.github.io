@@ -3,22 +3,150 @@
 	font-family: "Roboto", sans-serif;
 }
 
-:root {
-	--main-color: #9356DC;
-  --grad-color: #FF79DA;
-  --sprt-color: #99E2D0;
-  --sprt-txt-color: #008766;
+body {
+	margin: 0;
 }
 
-.fa-solid {
-  color: var(--main-color);
+:root {
+	--main-color: #9356dc;
+	--grad-color: #ff79da;
+	--sprt-color: #99e2d0;
+	--sprt-txt-color: #008766;
+	--dark-grey: #353535;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	padding: 3px 0;
+}
+
+img {
+	height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .title {
-  font-family: "Shrikhand", cursive;
+	font-family: "Shrikhand", cursive;
+	font-weight: 400;
+}
+
+.card-2 {
+	height: 72px;
+	margin: 25px 0 25px 10px;
+	display: flex;
+	align-items: center;
+	background-color: #f6f6f6;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+	border-radius: 20px;
+}
+
+.card-2 .counter {
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
+	background-color: var(--main-color);
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+}
+
+.cta-button {
+	padding: 15px;
+	color: white;
+	background: linear-gradient(
+		193.33deg,
+		var(--main-color) -11.44%,
+		var(--grad-color) 123.93%
+	);
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 25px;
+}
+
+.card {
+  margin: 15px 0;
+  position: relative;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.card .img-container {
+  height: 180px;
+}
+
+.card .tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 5px 10px;
+  background-color: var(--sprt-color);
+  color: var(--sprt-txt-color);
+  border-radius: 5px;
+}
+
+.card-text {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /*** Header ***/
 header {
+	background-color: white;
 	height: 63px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); */
+	box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.95);
+}
+
+header .img-container {
+	height: 30px;
+}
+
+/*** Footer ***/
+footer {
+	background-color: var(--dark-grey);
+	display: flex;
+	flex-direction: column;
+	padding: 22px 25px;
+}
+
+footer * {
+	color: white;
+}
+
+footer .title {
+	font-size: 18px;
+	margin: 0 0 16px 0;
+}
+
+footer i {
+	width: 14px;
+	margin-right: 5px;
+}
+
+.fa-handshake-angle {
+	transform: scale(0.8, 1.1);
+	margin-left: -2px;
+	padding-right: 2px;
+}
+
+/*** sections rainbow ***/
+.banner {
+	/* background-color: chartreuse; */
+}
+
+.fonctionnement {
+	/* background-color: gold; */
+}
+
+.restaurants {
+	/* background-color: dodgerblue; */
 }
