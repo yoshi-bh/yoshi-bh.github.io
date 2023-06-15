@@ -9,7 +9,7 @@ p {
 }
 
 h3 {
-  font-size: 24px;
+	font-size: 24px;
 }
 
 /*** General ***/
@@ -69,7 +69,7 @@ img {
 }
 
 .cta-button {
-	min-width: 45%;
+	min-width: 160px;
 	padding: 16px 20px;
 	text-align: center;
 	color: white;
@@ -81,6 +81,12 @@ img {
 	);
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 	border-radius: 25px;
+}
+
+.cta-button:active,
+.cta-button:hover {
+	background: linear-gradient(356deg, #9356dc -5.2%, #ff79da 100.74%);
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 /*** Main Card ***/
@@ -120,9 +126,17 @@ img {
 	align-items: center;
 }
 
+.card-text div {
+	width: 85%;
+	overflow: hidden;
+}
+
 .card-text h4,
 .card-text p {
 	margin: 2px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .i-thin {
@@ -138,22 +152,24 @@ img {
 		193.33deg,
 		var(--main-color) -11.44%,
 		var(--grad-color) 103.93%
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		font-weight: 900;
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 900;
 }
 
 /*** Header ***/
 header {
+	position: sticky;
+	top: 0;
 	background-color: white;
 	height: 63px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); */
-	box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.95);
+	z-index: 10;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 header i {
@@ -206,4 +222,20 @@ footer i {
 
 .restaurants {
 	/* background-color: dodgerblue; */
+}
+
+@media (min-width: 1024px) {
+	footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: flex-end;
+		gap: 30px;
+		padding-bottom: 20px;
+	}
+
+	footer .title {
+		margin: 26px 70px 5px 100px;
+		order: 1;
+	}
 }
