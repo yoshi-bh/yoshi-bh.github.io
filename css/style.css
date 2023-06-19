@@ -119,6 +119,7 @@ img {
 }
 
 .card-text {
+	max-width: 100%;
 	padding: 15px;
 	display: flex;
 	flex-direction: row;
@@ -145,18 +146,6 @@ img {
 	font-size: 22px;
 	font-weight: 100;
 	transform: scale(1, 1.15);
-}
-
-.liked {
-	background: linear-gradient(
-		193.33deg,
-		var(--main-color) -11.44%,
-		var(--grad-color) 103.93%
-	);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-weight: 900;
 }
 
 /*** Header ***/
@@ -222,6 +211,20 @@ footer i {
 
 .restaurants {
 	/* background-color: dodgerblue; */
+}
+
+/*** Animations ***/
+.i-thin:active,
+.i-thin:hover {
+	background: linear-gradient(
+		193.33deg,
+		var(--main-color) -11.44%,
+		var(--grad-color) 103.93%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 900;
 }
 
 @media (min-width: 1024px) {

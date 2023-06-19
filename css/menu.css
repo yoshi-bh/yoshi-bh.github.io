@@ -1,7 +1,7 @@
 .img-container {
 	/* z-index: 100; */
 	/* width: 100%; */
-	height: 275px;
+	height: 383px;
 }
 
 /*** Menu ***/
@@ -26,14 +26,14 @@
 }
 
 .title-container i {
-  margin: 0 15px 0 15px;
+	margin: 0 15px 0 15px;
 }
 
 .menu .title {
 	margin: 0;
-  font-size: 28px;
-  font-weight: 400;
-  /* font-style: italic; */
+	font-size: 28px;
+	font-weight: 400;
+	/* font-style: italic; */
 }
 
 .course {
@@ -41,10 +41,10 @@
 }
 
 .course h3 {
-  margin: 5px 0;
+	margin: 5px 0;
 	text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 300;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 .course-line {
@@ -53,47 +53,79 @@
 }
 
 .card-text {
-  align-items: end;
+	align-items: end;
 }
 
 .card-text h3 {
-  font-size: 18px;
-  font-weight: 500;
+	font-size: 18px;
+	font-weight: 500;
 }
 
 .card-text p {
-  font-size: 15px;
-  font-weight: 300;
+	font-size: 15px;
+	font-weight: 300;
 }
 
 .card-text .price {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .cta {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 26px 0;
+	display: flex;
+	justify-content: center;
+	margin: 40px 0 26px 0;
+}
+
+/*** Animation ***/
+.card-added {
+	display: none;
+}
+
+.card:active,
+.card:hover {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	/* width: 75%; */
+}
+
+.card:active .card-added,
+.card:hover .card-added {
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: var(--sprt-color);
+}
+
+.card:active .card-text,
+.card:hover .card-text {
+	width: 90%;
+}
+
+.fa-circle-check {
+	font-size: 20px;
 }
 
 @media (min-width: 1024px) {
-  .center-menu {
-    display: flex;
-    justify-content: center;
-  }
+	.center-menu {
+		display: flex;
+		justify-content: center;
+	}
 
-  .menu {
-    width: 100%;
-    max-width: 1024px;
-    /* padding: 0 0 0 100px; */
-  }
+	.menu {
+		width: 100%;
+		max-width: 1024px;
+		/* padding: 0 0 0 100px; */
+	}
 
-  .title-container {
-    justify-content: center;  
-  }
+	.title-container {
+		justify-content: center;
+	}
 
-  .course {
-    width: 60%;
-    margin: 50px auto 50px auto;
-  }
+	.course {
+		width: 60%;
+		margin: 50px auto 50px auto;
+	}
 }
