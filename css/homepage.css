@@ -71,15 +71,24 @@
 	font-size: 17px;
 }
 
+/*** Animations ***/
+.heart {
+	margin-right: 10px;
+
+	.heart-icon-dynamic {
+		background: white;
+	}
+}
+
 @media (min-width: 1024px) {
 	.fonctionnement {
 		max-width: 1024px;
 		margin: auto;
 	}
 
-  .card-2 {
-    width: 32%;
-  }
+	.card-2 {
+		width: 32%;
+	}
 
 	.fonctionnement-container {
 		display: flex;
@@ -93,13 +102,13 @@
 	}
 
 	.restaurants {
-    margin: auto;
+		margin: auto;
 	}
-  
-  .restaurants-container {
-    max-width: 1024px;
-    margin: auto;
-  }
+
+	.restaurants-container {
+		max-width: 1024px;
+		margin: auto;
+	}
 
 	.restaurants-cards {
 		display: flex;

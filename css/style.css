@@ -127,7 +127,7 @@ img {
 	align-items: center;
 }
 
-.card-text div {
+.card-text div:first-child {
 	width: 85%;
 	overflow: hidden;
 }
@@ -138,14 +138,6 @@ img {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-
-.i-thin {
-	width: fit-content;
-	height: fit-content;
-	font-size: 22px;
-	font-weight: 100;
-	transform: scale(1, 1.15);
 }
 
 /*** Header ***/
@@ -214,17 +206,62 @@ footer i {
 }
 
 /*** Animations ***/
-.i-thin:active,
-.i-thin:hover {
-	background: linear-gradient(
-		193.33deg,
-		var(--main-color) -11.44%,
-		var(--grad-color) 103.93%
-	);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-weight: 900;
+.heart {
+	position: relative;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	width: fit-content;
+	height: fit-content;
+	font-size: 22px;
+	transform: scale(1, 1.15);
+
+	.heart-icon-static {
+		font-weight: 900;
+
+		background: linear-gradient(
+			193.33deg,
+			var(--main-color) -11.44%,
+			var(--grad-color) 103.93%
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.heart-icon-dynamic,
+	.heart-icon-dynamic-inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+
+		transition: all ease 0.5s;
+	}
+
+	.heart-icon-dynamic {
+		overflow: hidden;
+		background: #f7f7f7;
+	}
+
+	.heart-icon-dynamic-inner {
+		font-weight: 100;
+	}
+
+	&:hover {
+		.heart-icon-dynamic {
+			transform: translateY(-100%);
+		}
+		.heart-icon-dynamic-inner {
+			transform: translateY(100%);
+		}
+	}
 }
 
 @media (min-width: 1024px) {
