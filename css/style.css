@@ -192,19 +192,6 @@ footer i {
 	padding-right: 2px;
 }
 
-/*** sections rainbow ***/
-.banner {
-	/* background-color: chartreuse; */
-}
-
-.fonctionnement {
-	/* background-color: gold; */
-}
-
-.restaurants {
-	/* background-color: dodgerblue; */
-}
-
 /*** Animations ***/
 .heart {
 	position: relative;
@@ -261,6 +248,15 @@ footer i {
 		.heart-icon-dynamic-inner {
 			transform: translateY(100%);
 		}
+	}
+}
+
+@keyframes FadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 

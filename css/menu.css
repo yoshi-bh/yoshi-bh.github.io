@@ -132,6 +132,21 @@
 	font-size: 20px;
 }
 
+.menu .course {
+	opacity: 0;
+	animation: FadeIn 500ms 0s ease-in-out forwards;
+}
+
+.menu .course:nth-child(2) {
+	animation-delay: 0s;
+}
+.menu .course:nth-child(3) {
+	animation-delay: 0.5s;
+}
+.menu .course:nth-child(4) {
+	animation-delay: 1s;
+}
+
 @media (min-width: 1024px) {
 	.center-menu {
 		display: flex;
