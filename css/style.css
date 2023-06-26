@@ -203,52 +203,50 @@ footer i {
 	height: fit-content;
 	font-size: 22px;
 	transform: scale(1, 1.15);
+}
+.heart-icon-static {
+	font-weight: 900;
 
-	.heart-icon-static {
-		font-weight: 900;
+	background: linear-gradient(
+		193.33deg,
+		var(--main-color) -11.44%,
+		var(--grad-color) 103.93%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
-		background: linear-gradient(
-			193.33deg,
-			var(--main-color) -11.44%,
-			var(--grad-color) 103.93%
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+.heart-icon-dynamic,
+.heart-icon-dynamic-inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
 
-	.heart-icon-dynamic,
-	.heart-icon-dynamic-inner {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 2;
+	transition: all ease 0.5s;
+}
 
-		transition: all ease 0.5s;
-	}
+.heart-icon-dynamic {
+	overflow: hidden;
+	background: #f7f7f7;
+}
 
-	.heart-icon-dynamic {
-		overflow: hidden;
-		background: #f7f7f7;
-	}
+.heart-icon-dynamic-inner {
+	font-weight: 100;
+}
 
-	.heart-icon-dynamic-inner {
-		font-weight: 100;
-	}
+.heart:hover .heart-icon-dynamic {
+	transform: translateY(-100%);
+}
 
-	&:hover {
-		.heart-icon-dynamic {
-			transform: translateY(-100%);
-		}
-		.heart-icon-dynamic-inner {
-			transform: translateY(100%);
-		}
-	}
+.heart:hover .heart-icon-dynamic-inner {
+	transform: translateY(100%);
 }
 
 @keyframes FadeIn {

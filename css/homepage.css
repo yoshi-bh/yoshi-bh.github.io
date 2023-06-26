@@ -74,10 +74,10 @@
 /*** Animations ***/
 .heart {
 	margin-right: 10px;
+}
 
-	.heart-icon-dynamic {
-		background: white;
-	}
+.heart-icon-dynamic {
+	background: white;
 }
 
 /* .loader {
@@ -138,45 +138,47 @@
 	}
 } */
 
-.restaurants-cards {
+main,
+footer {
 	opacity: 0;
-	animation: FadeIn 500ms 3s ease-in-out forwards;
+	animation: FadeIn 500ms 3.5s ease-in-out forwards;
+}
+
+main {
+	margin-top: -100px;
 }
 
 .loader {
 	opacity: 0;
-	animation: Loader 3.5s 0s ease-in-out forwards;
-	position: absolute;
-	margin: 500px auto 0 auto;
-	left: 0;
-	right: 0;
+	animation: Loader 0.6s 0s 5 alternate ease-in-out;
+	position: sticky;
+	top: calc(50% - 50px);
+	left: calc(50% - 50px);
 	text-align: center;
-	font-size: 50px;
+	font-size: 100px;
+	background: linear-gradient(
+		193.33deg,
+		var(--main-color) -11.44%,
+		var(--grad-color) 103.93%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 @keyframes Loader {
 	0% {
-		opacity: 1;
-		transform: scale(1, 1);
-		font-weight: 100;
-	}
-	50% {
-		transform: scale(3, 3);
-	}
-	75% {
-		font-weight: 900;
-		background: linear-gradient(
-			193.33deg,
-			var(--main-color) -11.44%,
-			var(--grad-color) 103.93%
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+		opacity: 0.2;
+		/* transform: scale(1, 1); */
+		/* font-weight: 100; */
 	}
 	100% {
-		opacity: 0;
+		opacity: 1;
+		font-weight: 900;
 	}
+	/* 100% {
+		opacity: 0;
+	} */
 }
 
 @media (min-width: 1024px) {
@@ -222,7 +224,12 @@
 	}
 
 	.loader {
-		margin-top: 220px;
-		font-size: 100px;
+		font-size: 300px;
+		top: calc(50% - 150px);
+		left: calc(50% - 150px);
+	}
+
+	main {
+		margin-top: -300px;
 	}
 }
