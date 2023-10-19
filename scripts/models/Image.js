@@ -32,7 +32,7 @@ class Image {
 	// }
 
 	get displayedMedia() {
-		let media = `<img src="./assets/images/${this._photographerName}/${this._image}"/>`;
+		let media = `<img alt="" src="./assets/images/${this._photographerName}/${this._image}"/>`;
 		// console.log(media);
 		return media;
 	}

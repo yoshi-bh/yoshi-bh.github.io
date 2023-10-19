@@ -34,7 +34,7 @@ class Video {
 	get displayedMedia() {
 		let media = `
       <video>
-        <source src="./assets/images/${this._photographerName}/${this._video}" type="video/mp4">
+        <source alt="" src="./assets/images/${this._photographerName}/${this._video}" type="video/mp4">
       </video>
     `;
 		// console.log(media);

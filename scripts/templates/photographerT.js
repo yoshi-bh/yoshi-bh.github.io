@@ -9,6 +9,7 @@ function photographerTemplate(data) {
 		const article = document.createElement("article");
 		const img = document.createElement("img");
 		img.setAttribute("src", picture);
+		img.setAttribute("alt", "");
 		const h2 = document.createElement("h2");
 		h2.textContent = name;
 		const h3 = document.createElement("h3");
@@ -42,11 +43,10 @@ function photographerTemplate(data) {
 		const p = document.createElement("p");
 		p.textContent = tagline;
 
-		const nbLikes = 420;
 		const pCard = document.createElement("div");
 		pCard.className = "price-card";
 		pCard.innerHTML = `
-			<p>${nbLikes} <i class="fa fa-heart" aria-label="likes"></i></p>
+			<p id="totalLikes">0000 <i class="fa fa-heart" aria-label="likes"></i></p>
 			<p>${price}€ / jour</p>
 		`;
 

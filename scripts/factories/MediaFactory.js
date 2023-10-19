@@ -1,6 +1,3 @@
-// import Image from "../models/Photo.js";
-// import Video from "../models/Video.js";
-
 class MediaFactory {
 	constructor(data, photographerName) {
 		// Si le type correspond à une image, alors on instancie une image
@@ -17,5 +14,3 @@ class MediaFactory {
 
 	// isLiked()
 }
-
-// export default MediaFactory;
