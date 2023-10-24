@@ -25,7 +25,7 @@ class MediaCard {
 		wrapper.classList.add("media-card-wrapper");
 
 		const mediaCard = `
-          <div class="media-thumbnail clickable">
+          <div class="media-thumbnail clickable" tabindex="0">
               ${this._media.displayedMedia}
           </div>
           <div class="media-text">
@@ -35,9 +35,6 @@ class MediaCard {
       `;
 
 		wrapper.innerHTML = mediaCard;
-		// wrapper.querySelector("i").addEventListener("click", this.likeMedia);
 		return wrapper;
 	}
 }
-
-// export default MediaCard;

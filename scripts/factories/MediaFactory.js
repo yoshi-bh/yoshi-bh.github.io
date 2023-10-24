@@ -11,6 +11,4 @@ class MediaFactory {
 			throw "Unknown type format";
 		}
 	}
-
-	// isLiked()
 }

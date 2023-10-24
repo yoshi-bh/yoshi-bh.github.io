@@ -14,26 +14,12 @@ class Image {
 		return this._id;
 	}
 
-	// get photographerId() {
-	// 	return this._photographerId;
-	// }
-
 	get title() {
 		return this._title;
 	}
 
-	// get image() {
-	// 	return this._image;
-	// }
-
-	// get fileLocation() {
-	// 	let photographerName = "Mimi"; // TODO
-	// 	return `./assets/images/${photographerName}/${this._image}`;
-	// }
-
 	get displayedMedia() {
 		let media = `<img alt="" src="./assets/images/${this._photographerName}/${this._image}"/>`;
-		// console.log(media);
 		return media;
 	}
 
@@ -44,14 +30,4 @@ class Image {
 	set likes(newLikes) {
 		this._likes = newLikes;
 	}
-
-	// get date() {
-	// 	return this._date;
-	// }
-
-	// get price() {
-	// 	return this._price;
-	// }
 }
-
-// export default Image;

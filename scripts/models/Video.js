@@ -14,22 +14,9 @@ class Video {
 		return this._id;
 	}
 
-	// get photographerId() {
-	// 	return this._photographerId;
-	// }
-
 	get title() {
 		return this._title;
 	}
-
-	// get video() {
-	// 	return this._video;
-	// }
-
-	// get fileLocation() {
-	// 	let photographerName = "Mimi"; // TODO
-	// 	return `./assets/images/${photographerName}/${this._video}`;
-	// }
 
 	get displayedMedia() {
 		let media = `
@@ -37,7 +24,6 @@ class Video {
         <source alt="" src="./assets/images/${this._photographerName}/${this._video}" type="video/mp4">
       </video>
     `;
-		// console.log(media);
 		return media;
 	}
 
@@ -48,14 +34,4 @@ class Video {
 	set likes(newLikes) {
 		this._likes = newLikes;
 	}
-
-	// get date() {
-	// 	return this._date;
-	// }
-
-	// get price() {
-	// 	return this._price;
-	// }
 }
-
-// export default Video;

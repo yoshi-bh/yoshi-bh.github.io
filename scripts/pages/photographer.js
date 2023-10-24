@@ -1,7 +1,3 @@
-// import photographerTemplate from "../templates/photographerT";
-// import MediaFactory from "../factories/mediaFactory";
-// import MediaCard from "../templates/MediaCard";
-
 let totalLikes = 0;
 
 async function getData() {
@@ -20,10 +16,9 @@ function displayData(photographer) {
 	const photographerHeader = document.querySelector(".photograph-header");
 	const photographerModel = photographerTemplate(photographer);
 	const { container, img, priceCard } = photographerModel.getUserHeaderDOM();
-	// console.log(photographerHeader);
+
 	photographerHeader.prepend(container);
-	photographerHeader.append(img);
-	photographerHeader.append(priceCard);
+	photographerHeader.append(img, priceCard);
 }
 
 function likingMedia(mCard, mediaCard) {
@@ -42,21 +37,24 @@ function likingMedia(mCard, mediaCard) {
 		"#totalLikes"
 	).innerHTML = `<p id="totalLikes">${totalLikes} <i class="fa fa-heart" aria-label="likes"></i></p>`;
 
+	// Create new media card and replace the old one
 	const mediaGrid = document.querySelector(".media-grid");
 	const newMediaCard = mCard.createMediaCard();
 
+	// Keeps the old lightbox event listener on the new element
+	newMediaCard
+		.querySelector(".media-thumbnail")
+		.replaceWith(mediaCard.querySelector(".media-thumbnail"));
 	newMediaCard
 		.querySelector("i")
 		.addEventListener("click", () => likingMedia(mCard, newMediaCard));
 	mediaGrid.replaceChild(newMediaCard, mediaCard);
-	// const displayedMedias = getDisplayedMedias(medias, photographerID);
-	// displayMedias(displayedMedias, photographers, photographerID);
 }
 
 function displayMedias(displayedMedias, photographers, photographerID) {
 	const mediaGrid = document.querySelector(".media-grid");
 	let mCardsArray = [];
-	mediaGrid.innerHTML = "";
+	mediaGrid.innerHTML = ""; // reset old grid content
 
 	for (media of displayedMedias) {
 		const photographerName = photographers
@@ -64,15 +62,13 @@ function displayMedias(displayedMedias, photographers, photographerID) {
 			.name.split(" ")[0]
 			.replace("-", " ");
 		const mediaData = new MediaFactory(media, photographerName);
-		// mediaData.isLiked();
 		const mediaCard = new MediaCard(mediaData);
 		mCardsArray.push(mediaCard);
 	}
-	// Build Gallerie Function (with cloned array of obj) + sort type
+
 	for (let i = 0; i < mCardsArray.length; i++) {
 		const mediaCardElem = mCardsArray[i].createMediaCard();
-		// console.log(mediaCardElem);
-		// console.log(mCardsArray[i]);
+
 		mediaCardElem
 			.querySelector(".media-thumbnail")
 			.addEventListener("click", () =>
@@ -83,7 +79,6 @@ function displayMedias(displayedMedias, photographers, photographerID) {
 			.addEventListener("click", () =>
 				likingMedia(mCardsArray[i], mediaCardElem)
 			);
-		// console.log(mCard);
 		mediaGrid.appendChild(mediaCardElem);
 	}
 }
@@ -92,6 +87,7 @@ function getDisplayedMedias(medias, photographerID, sortType = "popular") {
 	const displayedMedia = medias.filter(
 		(e) => e.photographerId === photographerID
 	);
+
 	switch (sortType) {
 		case "popular":
 			displayedMedia.sort((a, b) => b.likes - a.likes);
@@ -120,7 +116,11 @@ async function init() {
 	const { photographers, medias } = await getData();
 	const params = new URL(document.location).searchParams;
 	const photographerID = parseInt(params.get("id"));
+
+	// Adds the photograph info in the header
 	displayData(photographers.find((e) => e.id === photographerID));
+
+	// Adds the photo/video gallery
 	const displayedMedias = getDisplayedMedias(medias, photographerID);
 	totalLikes = displayedMedias.reduce((a, b) => a + parseInt(b.likes), 0);
 	displayMedias(displayedMedias, photographers, photographerID);
@@ -133,8 +133,5 @@ async function init() {
 		"#totalLikes"
 	).innerHTML = `<p id="totalLikes">${totalLikes} <i class="fa fa-heart" aria-label="likes"></i></p>`;
 }
-
-// let sortType = "popular";
-// document.querySelector("")
 
 init();

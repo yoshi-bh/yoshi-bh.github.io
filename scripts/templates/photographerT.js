@@ -58,5 +58,3 @@ function photographerTemplate(data) {
 	}
 	return { name, picture, getUserCardDOM, getUserHeaderDOM };
 }
-
-// export default photographerTemplate;
